@@ -18,7 +18,6 @@ export const initialState = {
 }
 
 export const carReducer = (state = initialState, action) => {
-  console.log(state, action);
   switch(action.type) {
     case ADD_SPOILER:
       return {
