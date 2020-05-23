@@ -21,14 +21,13 @@ export const carReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case ADD_FEATURE:
-      console.log('hey from addFeature');
       return {
         ...state,
         car: {
           ...state.car,
           features: [...state.car.features, action.payload.additionalFeature]
-        }
-        // features: [...state.car.features, action.payload.additionalFeature]
+        },
+        additionalPrice: state.additionalPrice + action.payload.additionalPrice
       };
 
     default:
