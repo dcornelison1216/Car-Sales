@@ -1,4 +1,4 @@
-import { ADD_SPOILER } from '../actions';
+import { ADD_FEATURE } from '../actions';
 
 export const initialState = {
   additionalPrice: 0,
@@ -19,9 +19,16 @@ export const initialState = {
 
 export const carReducer = (state = initialState, action) => {
   switch(action.type) {
-    case ADD_SPOILER:
+
+    case ADD_FEATURE:
+      console.log('hey from addFeature');
       return {
-        state
+        ...state,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload.additionalFeature]
+        }
+        // features: [...state.car.features, action.payload.additionalFeature]
       };
 
     default:

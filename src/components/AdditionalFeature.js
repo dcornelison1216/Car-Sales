@@ -1,21 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addSpoiler } from '../actions';
+import { addFeature } from '../actions';
 
 class AdditionalFeature extends React.Component {
-  state = {
-    additionalPrice: 0,
-    additionalFeatures: []
-  }
 
   render() {
+    console.log('props', this.props)
     return (
       <li>
         {/* Add an onClick that will let you add a feature to your car */}
         <button
           className="button"
-          onClick={()=>this.handleAddClick()}
-          value={this.props.feature.price}
+          onClick={()=>this.props.addFeature(this.props.feature.name, this.props.feature.price)}
         >Add</button>
         {this.props.feature.name} (+{this.props.feature.price})
       </li>
@@ -33,5 +29,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addSpoiler }
+  { addFeature }
 )(AdditionalFeature);
