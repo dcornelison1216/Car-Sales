@@ -24,5 +24,8 @@ export const carReducer = (state = initialState, action) => {
       return {
         state
       };
+
+    default:
+      return state;
   }
 };
