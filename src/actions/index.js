@@ -1,12 +1,5 @@
-export const ADD_SPOILER = 'ADD_SPOILER';
 export const ADD_FEATURE = 'ADD_FEATURE';
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
-
-export const addSpoiler = () => {
-  return {
-    type: ADD_SPOILER
-  };
-};
 
 export const addFeature = (feature, price) => {
   return {
@@ -15,9 +8,9 @@ export const addFeature = (feature, price) => {
   };
 };
 
-export const removeFeature = (feature, price) => {
+export const removeFeature = (feature) => {
   return {
     type: REMOVE_FEATURE,
-    payload: {}
+    payload: { removedFeature: feature }
   }
 }
