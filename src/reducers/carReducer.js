@@ -21,8 +21,6 @@ export const carReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case REMOVE_FEATURE:
-      console.log('action.payload.removedFeature', action.payload.removedFeature);
-      console.log('state', state);
       let removedPrice = 0;
       for(let i = 0; i < initialState.additionalFeatures.length; i++) {
         if(action.payload.removedFeature === initialState.additionalFeatures[i].name) {
@@ -32,7 +30,7 @@ export const carReducer = (state = initialState, action) => {
       const newFeatures = state.car.features.filter(item => {
         if(item !== action.payload.removedFeature) {
           return item
-        }
+        } else return null
       })
       return {
         ...state,
